@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>chrome-clip Settings</title>
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <div class="popup-container">
+            <!-- Header -->
+            <header class="popup-header">
+                <div class="header-content">
+                    <h1 class="title">
+                        <span class="accent">chrome-clip</span>
+                        <span class="version">v1.0.0</span>
+                    </h1>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Ready</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Settings -->
+            <main class="popup-main">
+                <!-- Quick Actions -->
+                <section class="section quick-actions">
+                    <h2 class="section-title">Quick Actions</h2>
+                    <div class="actions-grid">
+                        <button class="action-btn" id="toggle-overlay">
+                            <span class="icon">👁️</span>
+                            <span class="text">Toggle Overlay</span>
+                        </button>
+                        <button class="action-btn" id="clear-history">
+                            <span class="icon">🗑️</span>
+                            <span class="text">Clear History</span>
+                        </button>
+                        <button class="action-btn" id="export-settings">
+                            <span class="icon">📤</span>
+                            <span class="text">Export Settings</span>
+                        </button>
+                        <button class="action-btn" id="import-settings">
+                            <span class="icon">📥</span>
+                            <span class="text">Import Settings</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Theme Settings -->
+                <section class="section theme-settings">
+                    <h2 class="section-title">Appearance</h2>
+                    <div class="setting-group">
+                        <label for="theme-select" class="setting-label"
+                            >Theme</label
+                        >
+                        <select id="theme-select" class="setting-select">
+                            <option value="gruvbox-dark">Gruvbox Dark</option>
+                            <option value="catppuccin-latte">
+                                Catppuccin Latte
+                            </option>
+                            <option value="dracula">Dracula</option>
+                            <option value="nord">Nord</option>
+                        </select>
+                    </div>
+                    <div class="theme-preview">
+                        <div class="preview-box">
+                            <div class="preview-header">
+                                <span class="preview-accent">chrome-clip</span>
+                            </div>
+                            <div class="preview-content">
+                                <div class="preview-text">Sample content</div>
+                                <div class="preview-button">Button</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Position Settings -->
+                <section class="section position-settings">
+                    <h2 class="section-title">Position & Size</h2>
+                    <div class="setting-group">
+                        <label for="position-select" class="setting-label"
+                            >Default Position</label
+                        >
+                        <select id="position-select" class="setting-select">
+                            <option value="left">Left Edge</option>
+                            <option value="right">Right Edge</option>
+                            <option value="top">Top Edge</option>
+                            <option value="bottom">Bottom Edge</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="size-slider" class="setting-label">
+                            Default Size: <span id="size-value">25%</span>
+                        </label>
+                        <input
+                            type="range"
+                            id="size-slider"
+                            class="setting-slider"
+                            min="15"
+                            max="75"
+                            value="25"
+                            step="5"
+                        />
+                    </div>
+                    <div class="setting-group">
+                        <label class="setting-checkbox">
+                            <input type="checkbox" id="smart-positioning" />
+                            <span class="checkmark"></span>
+                            Smart positioning based on page content
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Behavior Settings -->
+                <section class="section behavior-settings">
+                    <h2 class="section-title">Behavior</h2>
+                    <div class="setting-group">
+                        <label class="setting-checkbox">
+                            <input type="checkbox" id="persistence" checked />
+                            <span class="checkmark"></span>
+                            Keep overlay visible across page navigation
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <label class="setting-checkbox">
+                            <input type="checkbox" id="auto-dismiss" />
+                            <span class="checkmark"></span>
+                            Auto-dismiss overlay after timeout
+                        </label>
+                    </div>
+                    <div
+                        class="setting-group auto-dismiss-timeout"
+                        style="display: none"
+                    >
+                        <label for="dismiss-timeout" class="setting-label">
+                            Timeout: <span id="timeout-value">5 seconds</span>
+                        </label>
+                        <input
+                            type="range"
+                            id="dismiss-timeout"
+                            class="setting-slider"
+                            min="3"
+                            max="30"
+                            value="5"
+                            step="1"
+                        />
+                    </div>
+                    <div class="setting-group">
+                        <label for="history-size" class="setting-label">
+                            History Size:
+                            <span id="history-size-value">20 items</span>
+                        </label>
+                        <input
+                            type="range"
+                            id="history-size"
+                            class="setting-slider"
+                            min="5"
+                            max="100"
+                            value="20"
+                            step="5"
+                        />
+                    </div>
+                </section>
+
+                <!-- Keyboard Shortcuts -->
+                <section class="section keyboard-settings">
+                    <h2 class="section-title">Keyboard Shortcuts</h2>
+                    <div class="shortcuts-list">
+                        <div class="shortcut-item">
+                            <span class="shortcut-action">Toggle Overlay</span>
+                            <div class="shortcut-keys">
+                                <kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
+                                <kbd>Z</kbd>
+                            </div>
+                        </div>
+                        <div class="shortcut-item">
+                            <span class="shortcut-action">Close Overlay</span>
+                            <div class="shortcut-keys">
+                                <kbd>Esc</kbd>
+                            </div>
+                        </div>
+                        <div class="shortcut-item">
+                            <span class="shortcut-action">Cycle Theme</span>
+                            <div class="shortcut-keys">
+                                <kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
+                                <kbd>T</kbd>
+                            </div>
+                        </div>
+                        <div class="shortcut-item">
+                            <span class="shortcut-action">Move to Edges</span>
+                            <div class="shortcut-keys">
+                                <kbd>Ctrl</kbd> + <kbd>Arrow Keys</kbd>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="secondary-btn" id="customize-shortcuts">
+                        Customize Shortcuts
+                    </button>
+                </section>
+
+                <!-- Privacy & Data -->
+                <section class="section privacy-settings">
+                    <h2 class="section-title">Privacy & Data</h2>
+                    <div class="setting-group">
+                        <label class="setting-checkbox">
+                            <input
+                                type="checkbox"
+                                id="clipboard-monitoring"
+                                checked
+                            />
+                            <span class="checkmark"></span>
+                            Monitor clipboard for changes
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <label class="setting-checkbox">
+                            <input type="checkbox" id="analytics" />
+                            <span class="checkmark"></span>
+                            Allow anonymous usage analytics
+                        </label>
+                    </div>
+                    <div class="privacy-info">
+                        <p class="info-text">
+                            🔒 Your clipboard data is processed locally and
+                            never sent to external servers. History is stored
+                            locally in your browser.
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="popup-footer">
+                <div class="footer-actions">
+                    <button class="secondary-btn" id="reset-settings">
+                        Reset to Defaults
+                    </button>
+                    <button class="primary-btn" id="save-settings">
+                        Save Changes
+                    </button>
+                </div>
+                <div class="footer-links">
+                    <a href="#" id="help-link">Help & Documentation</a>
+                    <a href="#" id="feedback-link">Send Feedback</a>
+                    <a href="#" id="github-link">GitHub</a>
+                </div>
+            </footer>
+
+            <!-- Hidden file input for import -->
+            <input
+                type="file"
+                id="import-file"
+                accept=".json"
+                style="display: none"
+            />
+        </div>
+
+        <!-- Status toast -->
+        <div class="toast" id="status-toast">
+            <span class="toast-message"></span>
+        </div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>

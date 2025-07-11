@@ -1,0 +1,305 @@
+/* Dracula Theme for chrome-clip extension */
+/* Based on the popular Dracula color scheme */
+
+.chrome-clip-theme-dracula {
+  /* Main colors */
+  --chrome-clip-bg: #282a36;
+  --chrome-clip-fg: #f8f8f2;
+  --chrome-clip-accent: #bd93f9;
+  --chrome-clip-border: #44475a;
+  --chrome-clip-shadow: rgba(40, 42, 54, 0.8);
+
+  /* Alternative backgrounds */
+  --chrome-clip-bg-alt: #44475a;
+  --chrome-clip-bg-soft: #373844;
+  --chrome-clip-bg-hard: #21222c;
+
+  /* Foreground variations */
+  --chrome-clip-fg-dim: #6272a4;
+  --chrome-clip-fg-bright: #ffffff;
+
+  /* Status colors */
+  --chrome-clip-success: #50fa7b;
+  --chrome-clip-warning: #ffb86c;
+  --chrome-clip-error: #ff5555;
+  --chrome-clip-info: #8be9fd;
+
+  /* Dracula color palette */
+  --chrome-clip-purple: #bd93f9;
+  --chrome-clip-pink: #ff79c6;
+  --chrome-clip-red: #ff5555;
+  --chrome-clip-orange: #ffb86c;
+  --chrome-clip-yellow: #f1fa8c;
+  --chrome-clip-green: #50fa7b;
+  --chrome-clip-cyan: #8be9fd;
+  --chrome-clip-comment: #6272a4;
+  --chrome-clip-selection: #44475a;
+  --chrome-clip-current-line: #44475a;
+}
+
+/* Dracula-specific styling overrides */
+.chrome-clip-theme-dracula .chrome-clip-overlay {
+  background: var(--chrome-clip-bg) !important;
+  color: var(--chrome-clip-fg) !important;
+  border-color: var(--chrome-clip-border) !important;
+  box-shadow: 0 8px 32px var(--chrome-clip-shadow) !important;
+}
+
+/* Header styling */
+.chrome-clip-theme-dracula .chrome-clip-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-dracula .title .accent {
+  color: var(--chrome-clip-purple) !important;
+  font-weight: bold;
+}
+
+.chrome-clip-theme-dracula .title .dim {
+  color: var(--chrome-clip-comment) !important;
+}
+
+/* Control buttons */
+.chrome-clip-theme-dracula .control-btn {
+  background: transparent !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-dracula .control-btn:hover {
+  background: var(--chrome-clip-purple) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-purple) !important;
+}
+
+/* Search bar */
+.chrome-clip-theme-dracula .search-input {
+  background: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-dracula .search-input:focus {
+  border-color: var(--chrome-clip-purple) !important;
+  box-shadow: 0 0 0 2px rgba(189, 147, 249, 0.2) !important;
+}
+
+.chrome-clip-theme-dracula .search-input::placeholder {
+  color: var(--chrome-clip-comment) !important;
+}
+
+/* Tabs */
+.chrome-clip-theme-dracula .content-tabs {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-dracula .tab-btn {
+  color: var(--chrome-clip-comment) !important;
+  background: transparent !important;
+}
+
+.chrome-clip-theme-dracula .tab-btn:hover {
+  color: var(--chrome-clip-fg) !important;
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-dracula .tab-btn.active {
+  color: var(--chrome-clip-purple) !important;
+  border-bottom-color: var(--chrome-clip-purple) !important;
+}
+
+/* Content area */
+.chrome-clip-theme-dracula .content-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-dracula .content-type {
+  color: var(--chrome-clip-cyan) !important;
+}
+
+.chrome-clip-theme-dracula .content-length {
+  color: var(--chrome-clip-comment) !important;
+}
+
+.chrome-clip-theme-dracula .content-text {
+  background: transparent !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+/* Syntax highlighting */
+.chrome-clip-theme-dracula .json-key {
+  color: var(--chrome-clip-cyan) !important;
+}
+
+.chrome-clip-theme-dracula .json-string {
+  color: var(--chrome-clip-yellow) !important;
+}
+
+.chrome-clip-theme-dracula .json-number {
+  color: var(--chrome-clip-purple) !important;
+}
+
+.chrome-clip-theme-dracula .json-boolean {
+  color: var(--chrome-clip-pink) !important;
+}
+
+.chrome-clip-theme-dracula .json-null {
+  color: var(--chrome-clip-comment) !important;
+}
+
+/* History items */
+.chrome-clip-theme-dracula .history-item {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-dracula .history-item:hover {
+  background: var(--chrome-clip-selection) !important;
+  border-color: var(--chrome-clip-purple) !important;
+}
+
+.chrome-clip-theme-dracula .history-type {
+  color: var(--chrome-clip-cyan) !important;
+}
+
+.chrome-clip-theme-dracula .history-length {
+  color: var(--chrome-clip-comment) !important;
+}
+
+/* Action buttons */
+.chrome-clip-theme-dracula .action-btn,
+.chrome-clip-theme-dracula .tool-btn {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-dracula .action-btn:hover,
+.chrome-clip-theme-dracula .tool-btn:hover {
+  background: var(--chrome-clip-purple) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-purple) !important;
+}
+
+/* Special button states */
+.chrome-clip-theme-dracula .history-use-btn:hover {
+  background: var(--chrome-clip-green) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-dracula .history-copy-btn:hover {
+  background: var(--chrome-clip-cyan) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-dracula .history-delete-btn:hover,
+.chrome-clip-theme-dracula .clear-history-btn:hover {
+  background: var(--chrome-clip-red) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-red) !important;
+}
+
+/* Status indicators */
+.chrome-clip-theme-dracula .status-text.success {
+  color: var(--chrome-clip-green) !important;
+}
+
+.chrome-clip-theme-dracula .status-text.error {
+  color: var(--chrome-clip-red) !important;
+}
+
+.chrome-clip-theme-dracula .status-text.warning {
+  color: var(--chrome-clip-orange) !important;
+}
+
+.chrome-clip-theme-dracula .status-text.info {
+  color: var(--chrome-clip-cyan) !important;
+}
+
+/* Footer */
+.chrome-clip-theme-dracula .chrome-clip-footer {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-top-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-dracula .position-indicator,
+.chrome-clip-theme-dracula .keyboard-hint .dim {
+  color: var(--chrome-clip-comment) !important;
+}
+
+.chrome-clip-theme-dracula .keyboard-hint .accent {
+  color: var(--chrome-clip-purple) !important;
+}
+
+/* Resize handles */
+.chrome-clip-theme-dracula .chrome-clip-resize-handle {
+  background: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-dracula .chrome-clip-resize-handle:hover {
+  background: var(--chrome-clip-purple) !important;
+}
+
+/* Scrollbar */
+.chrome-clip-theme-dracula ::-webkit-scrollbar-track {
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-dracula ::-webkit-scrollbar-thumb {
+  background: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-dracula ::-webkit-scrollbar-thumb:hover {
+  background: var(--chrome-clip-purple) !important;
+}
+
+/* Tool section headers */
+.chrome-clip-theme-dracula .tool-section h4 {
+  color: var(--chrome-clip-pink) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+/* Search highlighting */
+.chrome-clip-theme-dracula .content-text mark {
+  background: var(--chrome-clip-yellow) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+/* Focus states */
+.chrome-clip-theme-dracula button:focus,
+.chrome-clip-theme-dracula input:focus {
+  outline-color: var(--chrome-clip-purple) !important;
+  box-shadow: 0 0 0 2px rgba(189, 147, 249, 0.3) !important;
+}
+
+/* Dracula theme specific enhancements */
+.chrome-clip-theme-dracula .chrome-clip-overlay {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Selection highlighting */
+.chrome-clip-theme-dracula .content-text::selection {
+  background: var(--chrome-clip-selection) !important;
+  color: var(--chrome-clip-fg-bright) !important;
+}
+
+/* Enhanced button gradients for Dracula aesthetic */
+.chrome-clip-theme-dracula .control-btn:hover,
+.chrome-clip-theme-dracula .action-btn:hover,
+.chrome-clip-theme-dracula .tool-btn:hover {
+  background: linear-gradient(135deg, var(--chrome-clip-purple), var(--chrome-clip-pink)) !important;
+  border-color: var(--chrome-clip-purple) !important;
+}
+
+/* Subtle glow effects */
+.chrome-clip-theme-dracula .tab-btn.active {
+  text-shadow: 0 0 8px rgba(189, 147, 249, 0.5);
+}
+
+.chrome-clip-theme-dracula .title .accent {
+  text-shadow: 0 0 8px rgba(189, 147, 249, 0.3);
+}

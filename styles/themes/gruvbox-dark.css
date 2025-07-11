@@ -1,0 +1,282 @@
+/* Gruvbox Dark Theme for chrome-clip extension */
+/* Based on the popular Gruvbox color scheme by morhetz */
+
+.chrome-clip-theme-gruvbox-dark {
+  /* Main colors */
+  --chrome-clip-bg: #282828;
+  --chrome-clip-fg: #ebdbb2;
+  --chrome-clip-accent: #fabd2f;
+  --chrome-clip-border: #504945;
+  --chrome-clip-shadow: rgba(40, 40, 40, 0.8);
+
+  /* Alternative backgrounds */
+  --chrome-clip-bg-alt: #3c3836;
+  --chrome-clip-bg-soft: #32302f;
+  --chrome-clip-bg-hard: #1d2021;
+
+  /* Foreground variations */
+  --chrome-clip-fg-dim: #a89984;
+  --chrome-clip-fg-bright: #fbf1c7;
+
+  /* Status colors */
+  --chrome-clip-success: #b8bb26;
+  --chrome-clip-warning: #fe8019;
+  --chrome-clip-error: #fb4934;
+  --chrome-clip-info: #83a598;
+
+  /* Additional accent colors */
+  --chrome-clip-red: #cc241d;
+  --chrome-clip-green: #98971a;
+  --chrome-clip-yellow: #d79921;
+  --chrome-clip-blue: #458588;
+  --chrome-clip-purple: #b16286;
+  --chrome-clip-aqua: #689d6a;
+  --chrome-clip-orange: #d65d0e;
+
+  /* Bright variants */
+  --chrome-clip-red-bright: #fb4934;
+  --chrome-clip-green-bright: #b8bb26;
+  --chrome-clip-yellow-bright: #fabd2f;
+  --chrome-clip-blue-bright: #83a598;
+  --chrome-clip-purple-bright: #d3869b;
+  --chrome-clip-aqua-bright: #8ec07c;
+  --chrome-clip-orange-bright: #fe8019;
+}
+
+/* Gruvbox-specific styling overrides */
+.chrome-clip-theme-gruvbox-dark .chrome-clip-overlay {
+  background: var(--chrome-clip-bg) !important;
+  color: var(--chrome-clip-fg) !important;
+  border-color: var(--chrome-clip-border) !important;
+  box-shadow: 0 8px 32px var(--chrome-clip-shadow) !important;
+}
+
+/* Header styling */
+.chrome-clip-theme-gruvbox-dark .chrome-clip-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .title .accent {
+  color: var(--chrome-clip-yellow-bright) !important;
+  font-weight: bold;
+}
+
+.chrome-clip-theme-gruvbox-dark .title .dim {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Control buttons */
+.chrome-clip-theme-gruvbox-dark .control-btn {
+  background: transparent !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .control-btn:hover {
+  background: var(--chrome-clip-yellow-bright) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-yellow-bright) !important;
+}
+
+/* Search bar */
+.chrome-clip-theme-gruvbox-dark .search-input {
+  background: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .search-input:focus {
+  border-color: var(--chrome-clip-yellow-bright) !important;
+  box-shadow: 0 0 0 2px rgba(250, 189, 47, 0.2) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .search-input::placeholder {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Tabs */
+.chrome-clip-theme-gruvbox-dark .content-tabs {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .tab-btn {
+  color: var(--chrome-clip-fg-dim) !important;
+  background: transparent !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .tab-btn:hover {
+  color: var(--chrome-clip-fg) !important;
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .tab-btn.active {
+  color: var(--chrome-clip-yellow-bright) !important;
+  border-bottom-color: var(--chrome-clip-yellow-bright) !important;
+}
+
+/* Content area */
+.chrome-clip-theme-gruvbox-dark .content-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .content-type {
+  color: var(--chrome-clip-blue-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .content-length {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .content-text {
+  background: transparent !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+/* Syntax highlighting */
+.chrome-clip-theme-gruvbox-dark .json-key {
+  color: var(--chrome-clip-blue-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .json-string {
+  color: var(--chrome-clip-green-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .json-number {
+  color: var(--chrome-clip-purple-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .json-boolean {
+  color: var(--chrome-clip-orange-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .json-null {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* History items */
+.chrome-clip-theme-gruvbox-dark .history-item {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .history-item:hover {
+  background: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-yellow-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .history-type {
+  color: var(--chrome-clip-blue-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .history-length {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Action buttons */
+.chrome-clip-theme-gruvbox-dark .action-btn,
+.chrome-clip-theme-gruvbox-dark .tool-btn {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .action-btn:hover,
+.chrome-clip-theme-gruvbox-dark .tool-btn:hover {
+  background: var(--chrome-clip-yellow-bright) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-yellow-bright) !important;
+}
+
+/* Special button states */
+.chrome-clip-theme-gruvbox-dark .history-use-btn:hover {
+  background: var(--chrome-clip-blue-bright) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .history-copy-btn:hover {
+  background: var(--chrome-clip-aqua-bright) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .history-delete-btn:hover,
+.chrome-clip-theme-gruvbox-dark .clear-history-btn:hover {
+  background: var(--chrome-clip-red-bright) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-red-bright) !important;
+}
+
+/* Status indicators */
+.chrome-clip-theme-gruvbox-dark .status-text.success {
+  color: var(--chrome-clip-green-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .status-text.error {
+  color: var(--chrome-clip-red-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .status-text.warning {
+  color: var(--chrome-clip-orange-bright) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .status-text.info {
+  color: var(--chrome-clip-blue-bright) !important;
+}
+
+/* Footer */
+.chrome-clip-theme-gruvbox-dark .chrome-clip-footer {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-top-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .position-indicator,
+.chrome-clip-theme-gruvbox-dark .keyboard-hint .dim {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .keyboard-hint .accent {
+  color: var(--chrome-clip-yellow-bright) !important;
+}
+
+/* Resize handles */
+.chrome-clip-theme-gruvbox-dark .chrome-clip-resize-handle {
+  background: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark .chrome-clip-resize-handle:hover {
+  background: var(--chrome-clip-yellow-bright) !important;
+}
+
+/* Scrollbar */
+.chrome-clip-theme-gruvbox-dark ::-webkit-scrollbar-track {
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark ::-webkit-scrollbar-thumb {
+  background: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-gruvbox-dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--chrome-clip-yellow-bright) !important;
+}
+
+/* Tool section headers */
+.chrome-clip-theme-gruvbox-dark .tool-section h4 {
+  color: var(--chrome-clip-blue-bright) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+/* Search highlighting */
+.chrome-clip-theme-gruvbox-dark .content-text mark {
+  background: var(--chrome-clip-yellow-bright) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+/* Focus states */
+.chrome-clip-theme-gruvbox-dark button:focus,
+.chrome-clip-theme-gruvbox-dark input:focus {
+  outline-color: var(--chrome-clip-yellow-bright) !important;
+  box-shadow: 0 0 0 2px rgba(250, 189, 47, 0.3) !important;
+}

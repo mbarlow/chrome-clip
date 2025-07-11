@@ -1,0 +1,639 @@
+/* Main overlay styles for chrome-clip extension */
+/* Uses CSS custom properties for theming */
+
+/* CSS Custom Properties (Theme Variables) */
+:root {
+  --chrome-clip-bg: #282828;
+  --chrome-clip-fg: #ebdbb2;
+  --chrome-clip-accent: #fabd2f;
+  --chrome-clip-border: #504945;
+  --chrome-clip-shadow: rgba(40, 40, 40, 0.8);
+  --chrome-clip-bg-alt: #3c3836;
+  --chrome-clip-fg-dim: #a89984;
+  --chrome-clip-success: #b8bb26;
+  --chrome-clip-warning: #fe8019;
+  --chrome-clip-error: #fb4934;
+  --chrome-clip-info: #83a598;
+}
+
+/* Reset and base styles for overlay */
+.chrome-clip-overlay,
+.chrome-clip-overlay * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Source Code Pro', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Main overlay container */
+.chrome-clip-overlay {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100vh;
+  background: var(--chrome-clip-bg) !important;
+  color: var(--chrome-clip-fg) !important;
+  border: 1px solid var(--chrome-clip-border) !important;
+  box-shadow: 0 8px 32px var(--chrome-clip-shadow) !important;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Overlay visibility states */
+.chrome-clip-overlay.chrome-clip-show {
+  display: flex !important;
+  animation: chrome-clip-slide-in 0.3s ease-out;
+}
+
+.chrome-clip-overlay.chrome-clip-hide {
+  animation: chrome-clip-slide-out 0.2s ease-in;
+}
+
+/* Position-specific styles */
+.chrome-clip-overlay.snap-left {
+  left: 0 !important;
+  border-left: none !important;
+}
+
+.chrome-clip-overlay.snap-right {
+  right: 0 !important;
+  left: auto !important;
+  border-right: none !important;
+}
+
+.chrome-clip-overlay.snap-top {
+  top: 0 !important;
+  border-top: none !important;
+  width: 100vw !important;
+  height: 300px !important;
+  flex-direction: row;
+}
+
+.chrome-clip-overlay.snap-bottom {
+  bottom: 0 !important;
+  top: auto !important;
+  border-bottom: none !important;
+  width: 100vw !important;
+  height: 300px !important;
+  flex-direction: row;
+}
+
+/* Compact mode for small sizes */
+.chrome-clip-overlay.compact .chrome-clip-header .header-content .title {
+  font-size: 11px;
+}
+
+.chrome-clip-overlay.compact .tab-btn {
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+/* Header section */
+.chrome-clip-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom: 1px solid var(--chrome-clip-border) !important;
+  flex-shrink: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.title .accent {
+  color: var(--chrome-clip-accent) !important;
+}
+
+.title .dim {
+  color: var(--chrome-clip-fg-dim) !important;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.controls {
+  display: flex;
+  gap: 4px;
+}
+
+.control-btn {
+  background: transparent !important;
+  border: 1px solid var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+  background: var(--chrome-clip-accent) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-accent) !important;
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+  border-top: 1px solid var(--chrome-clip-border);
+}
+
+.search-input {
+  flex: 1;
+  background: var(--chrome-clip-bg) !important;
+  border: 1px solid var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+  padding: 6px 8px;
+  border-radius: 3px;
+  outline: none;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.search-input:focus {
+  border-color: var(--chrome-clip-accent) !important;
+  box-shadow: 0 0 0 2px rgba(250, 189, 47, 0.2) !important;
+}
+
+.search-input::placeholder {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.search-clear {
+  background: transparent !important;
+  border: none !important;
+  color: var(--chrome-clip-fg-dim) !important;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.search-clear:hover {
+  background: var(--chrome-clip-bg-alt) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+/* Content section */
+.chrome-clip-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Tabs */
+.content-tabs {
+  display: flex;
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom: 1px solid var(--chrome-clip-border) !important;
+}
+
+.tab-btn {
+  background: transparent !important;
+  border: none !important;
+  color: var(--chrome-clip-fg-dim) !important;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: 12px;
+  border-bottom: 2px solid transparent !important;
+}
+
+.tab-btn:hover {
+  color: var(--chrome-clip-fg) !important;
+  background: var(--chrome-clip-bg) !important;
+}
+
+.tab-btn.active {
+  color: var(--chrome-clip-accent) !important;
+  border-bottom-color: var(--chrome-clip-accent) !important;
+}
+
+/* Tab content */
+.tab-content {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tab-content.active {
+  display: flex;
+}
+
+/* Current tab content */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom: 1px solid var(--chrome-clip-border) !important;
+}
+
+.content-info {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+}
+
+.content-type {
+  color: var(--chrome-clip-accent) !important;
+  font-weight: bold;
+}
+
+.content-length {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.content-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.action-btn {
+  background: transparent !important;
+  border: 1px solid var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+  padding: 4px 6px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: var(--chrome-clip-accent) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.content-display {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+}
+
+.content-text {
+  background: transparent !important;
+  color: var(--chrome-clip-fg) !important;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Syntax highlighting */
+.content-text mark {
+  background: var(--chrome-clip-accent) !important;
+  color: var(--chrome-clip-bg) !important;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.json-key {
+  color: var(--chrome-clip-accent) !important;
+  font-weight: bold;
+}
+
+.json-string {
+  color: var(--chrome-clip-success) !important;
+}
+
+.json-number {
+  color: var(--chrome-clip-info) !important;
+}
+
+.json-boolean {
+  color: var(--chrome-clip-warning) !important;
+}
+
+.json-null {
+  color: var(--chrome-clip-fg-dim) !important;
+  font-style: italic;
+}
+
+/* History tab */
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom: 1px solid var(--chrome-clip-border) !important;
+}
+
+.history-count {
+  font-size: 11px;
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.clear-history-btn {
+  background: transparent !important;
+  border: 1px solid var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+  padding: 4px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.clear-history-btn:hover {
+  background: var(--chrome-clip-error) !important;
+  border-color: var(--chrome-clip-error) !important;
+  color: white !important;
+}
+
+.history-list {
+  flex: 1;
+  overflow: auto;
+  padding: 4px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin: 2px 0;
+  background: var(--chrome-clip-bg-alt) !important;
+  border: 1px solid var(--chrome-clip-border) !important;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.history-item:hover {
+  background: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-accent) !important;
+}
+
+.history-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-preview {
+  font-size: 12px;
+  color: var(--chrome-clip-fg) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.history-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 10px;
+}
+
+.history-type {
+  color: var(--chrome-clip-accent) !important;
+}
+
+.history-length {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.history-actions {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.history-use-btn,
+.history-copy-btn,
+.history-delete-btn {
+  background: transparent !important;
+  border: 1px solid var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+  padding: 2px 4px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: all 0.2s ease;
+}
+
+.history-use-btn:hover {
+  background: var(--chrome-clip-accent) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.history-copy-btn:hover {
+  background: var(--chrome-clip-info) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.history-delete-btn:hover {
+  background: var(--chrome-clip-error) !important;
+  color: white !important;
+}
+
+/* Tools tab */
+.tools-grid {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  overflow: auto;
+}
+
+.tool-section h4 {
+  color: var(--chrome-clip-accent) !important;
+  font-size: 12px;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--chrome-clip-border) !important;
+}
+
+.tool-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 4px;
+}
+
+.tool-btn {
+  background: var(--chrome-clip-bg-alt) !important;
+  border: 1px solid var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+  padding: 6px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 10px;
+  text-align: center;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tool-btn:hover {
+  background: var(--chrome-clip-accent) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-accent) !important;
+}
+
+/* Footer */
+.chrome-clip-footer {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-top: 1px solid var(--chrome-clip-border) !important;
+  padding: 6px 12px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+}
+
+.status-text {
+  color: var(--chrome-clip-fg) !important;
+}
+
+.status-text.success {
+  color: var(--chrome-clip-success) !important;
+}
+
+.status-text.error {
+  color: var(--chrome-clip-error) !important;
+}
+
+.status-text.warning {
+  color: var(--chrome-clip-warning) !important;
+}
+
+.status-text.info {
+  color: var(--chrome-clip-info) !important;
+}
+
+.position-indicator {
+  color: var(--chrome-clip-fg-dim) !important;
+  font-size: 10px;
+}
+
+.keyboard-hint {
+  font-size: 10px;
+}
+
+.keyboard-hint .dim {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.keyboard-hint .accent {
+  color: var(--chrome-clip-accent) !important;
+  font-weight: bold;
+}
+
+/* Resize handles */
+.chrome-clip-resize-handle {
+  background: var(--chrome-clip-border) !important;
+  transition: background-color 0.2s ease;
+  opacity: 0;
+}
+
+.chrome-clip-overlay:hover .chrome-clip-resize-handle {
+  opacity: 1;
+}
+
+.chrome-clip-resize-handle:hover {
+  background: var(--chrome-clip-accent) !important;
+}
+
+/* Scrollbar styling */
+.chrome-clip-overlay ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.chrome-clip-overlay ::-webkit-scrollbar-track {
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-overlay ::-webkit-scrollbar-thumb {
+  background: var(--chrome-clip-border) !important;
+  border-radius: 4px;
+}
+
+.chrome-clip-overlay ::-webkit-scrollbar-thumb:hover {
+  background: var(--chrome-clip-accent) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chrome-clip-overlay {
+    width: 100vw !important;
+    height: 50vh !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .tool-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Focus indicators for accessibility */
+.chrome-clip-overlay button:focus,
+.chrome-clip-overlay input:focus,
+.chrome-clip-overlay select:focus {
+  outline: 2px solid var(--chrome-clip-accent) !important;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --chrome-clip-bg: #000000;
+    --chrome-clip-fg: #ffffff;
+    --chrome-clip-border: #ffffff;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .chrome-clip-overlay,
+  .chrome-clip-overlay * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

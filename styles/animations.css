@@ -1,0 +1,447 @@
+/* Animation styles for chrome-clip extension */
+/* Smooth transitions and entrance/exit animations */
+
+/* Keyframe animations */
+@keyframes chrome-clip-slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes chrome-clip-slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Position-specific slide animations */
+@keyframes chrome-clip-slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes chrome-clip-slide-out-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes chrome-clip-slide-in-top {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes chrome-clip-slide-out-top {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes chrome-clip-slide-in-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes chrome-clip-slide-out-bottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Fade animations */
+@keyframes chrome-clip-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes chrome-clip-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Scale animations for buttons and interactive elements */
+@keyframes chrome-clip-scale-in {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes chrome-clip-scale-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Pulse animation for status indicators */
+@keyframes chrome-clip-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Shake animation for errors */
+@keyframes chrome-clip-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+/* Glow animation for focus states */
+@keyframes chrome-clip-glow {
+  0% {
+    box-shadow: 0 0 0 0 var(--chrome-clip-accent);
+  }
+  50% {
+    box-shadow: 0 0 8px 2px rgba(250, 189, 47, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--chrome-clip-accent);
+  }
+}
+
+/* Typing indicator animation */
+@keyframes chrome-clip-typing {
+  0%, 60%, 100% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+/* Progress bar animation */
+@keyframes chrome-clip-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Position-specific overlay animations */
+.chrome-clip-overlay.snap-left.chrome-clip-show {
+  animation: chrome-clip-slide-in 0.3s ease-out;
+}
+
+.chrome-clip-overlay.snap-left.chrome-clip-hide {
+  animation: chrome-clip-slide-out 0.2s ease-in;
+}
+
+.chrome-clip-overlay.snap-right.chrome-clip-show {
+  animation: chrome-clip-slide-in-right 0.3s ease-out;
+}
+
+.chrome-clip-overlay.snap-right.chrome-clip-hide {
+  animation: chrome-clip-slide-out-right 0.2s ease-in;
+}
+
+.chrome-clip-overlay.snap-top.chrome-clip-show {
+  animation: chrome-clip-slide-in-top 0.3s ease-out;
+}
+
+.chrome-clip-overlay.snap-top.chrome-clip-hide {
+  animation: chrome-clip-slide-out-top 0.2s ease-in;
+}
+
+.chrome-clip-overlay.snap-bottom.chrome-clip-show {
+  animation: chrome-clip-slide-in-bottom 0.3s ease-out;
+}
+
+.chrome-clip-overlay.snap-bottom.chrome-clip-hide {
+  animation: chrome-clip-slide-out-bottom 0.2s ease-in;
+}
+
+/* Tab content animations */
+.tab-content {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tab-content.active {
+  animation: chrome-clip-fade-in 0.2s ease-in-out;
+}
+
+/* Button hover animations */
+.control-btn,
+.action-btn,
+.tool-btn {
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover,
+.action-btn:hover,
+.tool-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:active,
+.action-btn:active,
+.tool-btn:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+/* History item animations */
+.history-item {
+  transition: all 0.2s ease;
+  animation: chrome-clip-scale-in 0.2s ease-out;
+}
+
+.history-item:hover {
+  transform: translateX(2px);
+}
+
+/* Search input focus animation */
+.search-input:focus {
+  animation: chrome-clip-glow 2s ease-in-out infinite;
+}
+
+/* Status text animations */
+.status-text.success {
+  animation: chrome-clip-pulse 0.5s ease-in-out;
+}
+
+.status-text.error {
+  animation: chrome-clip-shake 0.5s ease-in-out;
+}
+
+/* Resize handle animations */
+.chrome-clip-resize-handle {
+  transition: all 0.2s ease;
+}
+
+.chrome-clip-resize-handle:hover {
+  animation: chrome-clip-pulse 1s ease-in-out infinite;
+}
+
+/* Content loading animation */
+.content-display.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--chrome-clip-accent);
+  animation: chrome-clip-progress 1s ease-in-out infinite;
+}
+
+/* Theme transition animations */
+.chrome-clip-overlay {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.chrome-clip-overlay * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Micro-interactions for better UX */
+.tab-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.tab-btn:hover::before {
+  left: 100%;
+}
+
+/* Stagger animation for tool buttons */
+.tool-btn:nth-child(1) { animation-delay: 0ms; }
+.tool-btn:nth-child(2) { animation-delay: 50ms; }
+.tool-btn:nth-child(3) { animation-delay: 100ms; }
+.tool-btn:nth-child(4) { animation-delay: 150ms; }
+.tool-btn:nth-child(5) { animation-delay: 200ms; }
+.tool-btn:nth-child(6) { animation-delay: 250ms; }
+
+/* Smooth scrolling for all scrollable content */
+.chrome-clip-overlay * {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar animations */
+.chrome-clip-overlay ::-webkit-scrollbar-thumb {
+  transition: background-color 0.2s ease;
+}
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .chrome-clip-overlay.chrome-clip-show {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .chrome-clip-overlay.chrome-clip-hide {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Enhanced focus animations for better accessibility */
+.chrome-clip-overlay button:focus-visible {
+  animation: chrome-clip-glow 0.5s ease-in-out;
+  outline: 2px solid var(--chrome-clip-accent);
+  outline-offset: 2px;
+}
+
+/* Loading spinner for async operations */
+@keyframes chrome-clip-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.chrome-clip-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--chrome-clip-fg-dim);
+  border-radius: 50%;
+  border-top-color: var(--chrome-clip-accent);
+  animation: chrome-clip-spinner 0.8s ease-in-out infinite;
+}
+
+/* Notification slide-in animation */
+@keyframes chrome-clip-notification-in {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.chrome-clip-notification {
+  animation: chrome-clip-notification-in 0.3s ease-out;
+}
+
+/* Elastic bounce for interactive elements */
+@keyframes chrome-clip-bounce {
+  0%, 20%, 53%, 80%, 100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0) scaleY(1.1);
+  }
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0) scaleY(1.05);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
+  }
+}
+
+/* Apply bounce to success states */
+.success-action {
+  animation: chrome-clip-bounce 0.6s ease;
+}

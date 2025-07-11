@@ -1,0 +1,346 @@
+/* Nord Theme for chrome-clip extension */
+/* Based on the popular Nord color scheme */
+
+.chrome-clip-theme-nord {
+  /* Main colors */
+  --chrome-clip-bg: #2e3440;
+  --chrome-clip-fg: #d8dee9;
+  --chrome-clip-accent: #88c0d0;
+  --chrome-clip-border: #4c566a;
+  --chrome-clip-shadow: rgba(46, 52, 64, 0.8);
+
+  /* Alternative backgrounds */
+  --chrome-clip-bg-alt: #3b4252;
+  --chrome-clip-bg-soft: #434c5e;
+  --chrome-clip-bg-hard: #2e3440;
+
+  /* Foreground variations */
+  --chrome-clip-fg-dim: #616e88;
+  --chrome-clip-fg-bright: #eceff4;
+
+  /* Status colors */
+  --chrome-clip-success: #a3be8c;
+  --chrome-clip-warning: #ebcb8b;
+  --chrome-clip-error: #bf616a;
+  --chrome-clip-info: #5e81ac;
+
+  /* Nord color palette */
+  --chrome-clip-polar-night-0: #2e3440;
+  --chrome-clip-polar-night-1: #3b4252;
+  --chrome-clip-polar-night-2: #434c5e;
+  --chrome-clip-polar-night-3: #4c566a;
+  --chrome-clip-snow-storm-0: #d8dee9;
+  --chrome-clip-snow-storm-1: #e5e9f0;
+  --chrome-clip-snow-storm-2: #eceff4;
+  --chrome-clip-frost-0: #8fbcbb;
+  --chrome-clip-frost-1: #88c0d0;
+  --chrome-clip-frost-2: #81a1c1;
+  --chrome-clip-frost-3: #5e81ac;
+  --chrome-clip-aurora-red: #bf616a;
+  --chrome-clip-aurora-orange: #d08770;
+  --chrome-clip-aurora-yellow: #ebcb8b;
+  --chrome-clip-aurora-green: #a3be8c;
+  --chrome-clip-aurora-purple: #b48ead;
+}
+
+/* Nord-specific styling overrides */
+.chrome-clip-theme-nord .chrome-clip-overlay {
+  background: var(--chrome-clip-bg) !important;
+  color: var(--chrome-clip-fg) !important;
+  border-color: var(--chrome-clip-border) !important;
+  box-shadow: 0 8px 32px var(--chrome-clip-shadow) !important;
+}
+
+/* Header styling */
+.chrome-clip-theme-nord .chrome-clip-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-nord .title .accent {
+  color: var(--chrome-clip-frost-1) !important;
+  font-weight: bold;
+}
+
+.chrome-clip-theme-nord .title .dim {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Control buttons */
+.chrome-clip-theme-nord .control-btn {
+  background: transparent !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-nord .control-btn:hover {
+  background: var(--chrome-clip-frost-1) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-frost-1) !important;
+}
+
+/* Search bar */
+.chrome-clip-theme-nord .search-input {
+  background: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-nord .search-input:focus {
+  border-color: var(--chrome-clip-frost-1) !important;
+  box-shadow: 0 0 0 2px rgba(136, 192, 208, 0.2) !important;
+}
+
+.chrome-clip-theme-nord .search-input::placeholder {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Tabs */
+.chrome-clip-theme-nord .content-tabs {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-nord .tab-btn {
+  color: var(--chrome-clip-fg-dim) !important;
+  background: transparent !important;
+}
+
+.chrome-clip-theme-nord .tab-btn:hover {
+  color: var(--chrome-clip-fg) !important;
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-nord .tab-btn.active {
+  color: var(--chrome-clip-frost-1) !important;
+  border-bottom-color: var(--chrome-clip-frost-1) !important;
+}
+
+/* Content area */
+.chrome-clip-theme-nord .content-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-nord .content-type {
+  color: var(--chrome-clip-frost-3) !important;
+}
+
+.chrome-clip-theme-nord .content-length {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.chrome-clip-theme-nord .content-text {
+  background: transparent !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+/* Syntax highlighting */
+.chrome-clip-theme-nord .json-key {
+  color: var(--chrome-clip-frost-1) !important;
+}
+
+.chrome-clip-theme-nord .json-string {
+  color: var(--chrome-clip-aurora-green) !important;
+}
+
+.chrome-clip-theme-nord .json-number {
+  color: var(--chrome-clip-aurora-purple) !important;
+}
+
+.chrome-clip-theme-nord .json-boolean {
+  color: var(--chrome-clip-frost-3) !important;
+}
+
+.chrome-clip-theme-nord .json-null {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* History items */
+.chrome-clip-theme-nord .history-item {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-nord .history-item:hover {
+  background: var(--chrome-clip-bg-soft) !important;
+  border-color: var(--chrome-clip-frost-1) !important;
+}
+
+.chrome-clip-theme-nord .history-type {
+  color: var(--chrome-clip-frost-3) !important;
+}
+
+.chrome-clip-theme-nord .history-length {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Action buttons */
+.chrome-clip-theme-nord .action-btn,
+.chrome-clip-theme-nord .tool-btn {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-nord .action-btn:hover,
+.chrome-clip-theme-nord .tool-btn:hover {
+  background: var(--chrome-clip-frost-1) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-frost-1) !important;
+}
+
+/* Special button states */
+.chrome-clip-theme-nord .history-use-btn:hover {
+  background: var(--chrome-clip-aurora-green) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-nord .history-copy-btn:hover {
+  background: var(--chrome-clip-frost-0) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-nord .history-delete-btn:hover,
+.chrome-clip-theme-nord .clear-history-btn:hover {
+  background: var(--chrome-clip-aurora-red) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-aurora-red) !important;
+}
+
+/* Status indicators */
+.chrome-clip-theme-nord .status-text.success {
+  color: var(--chrome-clip-aurora-green) !important;
+}
+
+.chrome-clip-theme-nord .status-text.error {
+  color: var(--chrome-clip-aurora-red) !important;
+}
+
+.chrome-clip-theme-nord .status-text.warning {
+  color: var(--chrome-clip-aurora-yellow) !important;
+}
+
+.chrome-clip-theme-nord .status-text.info {
+  color: var(--chrome-clip-frost-1) !important;
+}
+
+/* Footer */
+.chrome-clip-theme-nord .chrome-clip-footer {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-top-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-nord .position-indicator,
+.chrome-clip-theme-nord .keyboard-hint .dim {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.chrome-clip-theme-nord .keyboard-hint .accent {
+  color: var(--chrome-clip-frost-1) !important;
+}
+
+/* Resize handles */
+.chrome-clip-theme-nord .chrome-clip-resize-handle {
+  background: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-nord .chrome-clip-resize-handle:hover {
+  background: var(--chrome-clip-frost-1) !important;
+}
+
+/* Scrollbar */
+.chrome-clip-theme-nord ::-webkit-scrollbar-track {
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-nord ::-webkit-scrollbar-thumb {
+  background: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-nord ::-webkit-scrollbar-thumb:hover {
+  background: var(--chrome-clip-frost-1) !important;
+}
+
+/* Tool section headers */
+.chrome-clip-theme-nord .tool-section h4 {
+  color: var(--chrome-clip-frost-3) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+/* Search highlighting */
+.chrome-clip-theme-nord .content-text mark {
+  background: var(--chrome-clip-aurora-yellow) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+/* Focus states */
+.chrome-clip-theme-nord button:focus,
+.chrome-clip-theme-nord input:focus {
+  outline-color: var(--chrome-clip-frost-1) !important;
+  box-shadow: 0 0 0 2px rgba(136, 192, 208, 0.3) !important;
+}
+
+/* Nord theme specific enhancements */
+.chrome-clip-theme-nord .chrome-clip-overlay {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Subtle gradients for Nord aesthetic */
+.chrome-clip-theme-nord .chrome-clip-header {
+  background: linear-gradient(135deg, var(--chrome-clip-bg-alt), var(--chrome-clip-bg-soft)) !important;
+}
+
+.chrome-clip-theme-nord .chrome-clip-footer {
+  background: linear-gradient(45deg, var(--chrome-clip-bg-alt), var(--chrome-clip-bg-soft)) !important;
+}
+
+/* Enhanced frost color transitions */
+.chrome-clip-theme-nord .control-btn:hover,
+.chrome-clip-theme-nord .action-btn:hover,
+.chrome-clip-theme-nord .tool-btn:hover {
+  background: linear-gradient(135deg, var(--chrome-clip-frost-1), var(--chrome-clip-frost-0)) !important;
+  border-color: var(--chrome-clip-frost-1) !important;
+}
+
+/* Selection highlighting */
+.chrome-clip-theme-nord .content-text::selection {
+  background: var(--chrome-clip-bg-soft) !important;
+  color: var(--chrome-clip-snow-storm-2) !important;
+}
+
+/* Aurora color accents for different content types */
+.chrome-clip-theme-nord .content-type[data-type="json"] {
+  color: var(--chrome-clip-aurora-green) !important;
+}
+
+.chrome-clip-theme-nord .content-type[data-type="xml"] {
+  color: var(--chrome-clip-aurora-orange) !important;
+}
+
+.chrome-clip-theme-nord .content-type[data-type="url"] {
+  color: var(--chrome-clip-frost-1) !important;
+}
+
+.chrome-clip-theme-nord .content-type[data-type="email"] {
+  color: var(--chrome-clip-aurora-purple) !important;
+}
+
+/* Soft shadows for depth */
+.chrome-clip-theme-nord .history-item,
+.chrome-clip-theme-nord .tool-btn,
+.chrome-clip-theme-nord .action-btn {
+  box-shadow: 0 2px 4px rgba(46, 52, 64, 0.3) !important;
+}
+
+.chrome-clip-theme-nord .history-item:hover,
+.chrome-clip-theme-nord .tool-btn:hover,
+.chrome-clip-theme-nord .action-btn:hover {
+  box-shadow: 0 4px 8px rgba(46, 52, 64, 0.4) !important;
+}
+
+/* Subtle text shadows for better readability */
+.chrome-clip-theme-nord .title .accent {
+  text-shadow: 0 1px 2px rgba(46, 52, 64, 0.5);
+}

@@ -1,0 +1,305 @@
+/* Catppuccin Latte Theme for chrome-clip extension */
+/* Based on the popular Catppuccin color scheme - Light variant */
+
+.chrome-clip-theme-catppuccin-latte {
+  /* Main colors */
+  --chrome-clip-bg: #eff1f5;
+  --chrome-clip-fg: #4c4f69;
+  --chrome-clip-accent: #1e66f5;
+  --chrome-clip-border: #acb0be;
+  --chrome-clip-shadow: rgba(76, 79, 105, 0.2);
+
+  /* Alternative backgrounds */
+  --chrome-clip-bg-alt: #e6e9ef;
+  --chrome-clip-bg-soft: #dce0e8;
+  --chrome-clip-bg-hard: #ccd0da;
+
+  /* Foreground variations */
+  --chrome-clip-fg-dim: #6c6f85;
+  --chrome-clip-fg-bright: #5c5f77;
+
+  /* Status colors */
+  --chrome-clip-success: #40a02b;
+  --chrome-clip-warning: #df8e1d;
+  --chrome-clip-error: #d20f39;
+  --chrome-clip-info: #04a5e5;
+
+  /* Catppuccin color palette */
+  --chrome-clip-rosewater: #dc8a78;
+  --chrome-clip-flamingo: #dd7878;
+  --chrome-clip-pink: #ea76cb;
+  --chrome-clip-mauve: #8839ef;
+  --chrome-clip-red: #d20f39;
+  --chrome-clip-maroon: #e64553;
+  --chrome-clip-peach: #fe640b;
+  --chrome-clip-yellow: #df8e1d;
+  --chrome-clip-green: #40a02b;
+  --chrome-clip-teal: #179299;
+  --chrome-clip-sky: #04a5e5;
+  --chrome-clip-sapphire: #209fb5;
+  --chrome-clip-blue: #1e66f5;
+  --chrome-clip-lavender: #7287fd;
+}
+
+/* Catppuccin-specific styling overrides */
+.chrome-clip-theme-catppuccin-latte .chrome-clip-overlay {
+  background: var(--chrome-clip-bg) !important;
+  color: var(--chrome-clip-fg) !important;
+  border-color: var(--chrome-clip-border) !important;
+  box-shadow: 0 8px 32px var(--chrome-clip-shadow) !important;
+}
+
+/* Header styling */
+.chrome-clip-theme-catppuccin-latte .chrome-clip-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .title .accent {
+  color: var(--chrome-clip-blue) !important;
+  font-weight: bold;
+}
+
+.chrome-clip-theme-catppuccin-latte .title .dim {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Control buttons */
+.chrome-clip-theme-catppuccin-latte .control-btn {
+  background: transparent !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .control-btn:hover {
+  background: var(--chrome-clip-blue) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-blue) !important;
+}
+
+/* Search bar */
+.chrome-clip-theme-catppuccin-latte .search-input {
+  background: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .search-input:focus {
+  border-color: var(--chrome-clip-blue) !important;
+  box-shadow: 0 0 0 2px rgba(30, 102, 245, 0.2) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .search-input::placeholder {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Tabs */
+.chrome-clip-theme-catppuccin-latte .content-tabs {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .tab-btn {
+  color: var(--chrome-clip-fg-dim) !important;
+  background: transparent !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .tab-btn:hover {
+  color: var(--chrome-clip-fg) !important;
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .tab-btn.active {
+  color: var(--chrome-clip-blue) !important;
+  border-bottom-color: var(--chrome-clip-blue) !important;
+}
+
+/* Content area */
+.chrome-clip-theme-catppuccin-latte .content-header {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .content-type {
+  color: var(--chrome-clip-mauve) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .content-length {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .content-text {
+  background: transparent !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+/* Syntax highlighting */
+.chrome-clip-theme-catppuccin-latte .json-key {
+  color: var(--chrome-clip-blue) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .json-string {
+  color: var(--chrome-clip-green) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .json-number {
+  color: var(--chrome-clip-peach) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .json-boolean {
+  color: var(--chrome-clip-mauve) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .json-null {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* History items */
+.chrome-clip-theme-catppuccin-latte .history-item {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .history-item:hover {
+  background: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-blue) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .history-type {
+  color: var(--chrome-clip-mauve) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .history-length {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+/* Action buttons */
+.chrome-clip-theme-catppuccin-latte .action-btn,
+.chrome-clip-theme-catppuccin-latte .tool-btn {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-color: var(--chrome-clip-border) !important;
+  color: var(--chrome-clip-fg) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .action-btn:hover,
+.chrome-clip-theme-catppuccin-latte .tool-btn:hover {
+  background: var(--chrome-clip-blue) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-blue) !important;
+}
+
+/* Special button states */
+.chrome-clip-theme-catppuccin-latte .history-use-btn:hover {
+  background: var(--chrome-clip-green) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .history-copy-btn:hover {
+  background: var(--chrome-clip-sky) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .history-delete-btn:hover,
+.chrome-clip-theme-catppuccin-latte .clear-history-btn:hover {
+  background: var(--chrome-clip-red) !important;
+  color: var(--chrome-clip-bg) !important;
+  border-color: var(--chrome-clip-red) !important;
+}
+
+/* Status indicators */
+.chrome-clip-theme-catppuccin-latte .status-text.success {
+  color: var(--chrome-clip-green) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .status-text.error {
+  color: var(--chrome-clip-red) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .status-text.warning {
+  color: var(--chrome-clip-yellow) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .status-text.info {
+  color: var(--chrome-clip-sky) !important;
+}
+
+/* Footer */
+.chrome-clip-theme-catppuccin-latte .chrome-clip-footer {
+  background: var(--chrome-clip-bg-alt) !important;
+  border-top-color: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .position-indicator,
+.chrome-clip-theme-catppuccin-latte .keyboard-hint .dim {
+  color: var(--chrome-clip-fg-dim) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .keyboard-hint .accent {
+  color: var(--chrome-clip-blue) !important;
+}
+
+/* Resize handles */
+.chrome-clip-theme-catppuccin-latte .chrome-clip-resize-handle {
+  background: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .chrome-clip-resize-handle:hover {
+  background: var(--chrome-clip-blue) !important;
+}
+
+/* Scrollbar */
+.chrome-clip-theme-catppuccin-latte ::-webkit-scrollbar-track {
+  background: var(--chrome-clip-bg) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte ::-webkit-scrollbar-thumb {
+  background: var(--chrome-clip-border) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte ::-webkit-scrollbar-thumb:hover {
+  background: var(--chrome-clip-blue) !important;
+}
+
+/* Tool section headers */
+.chrome-clip-theme-catppuccin-latte .tool-section h4 {
+  color: var(--chrome-clip-mauve) !important;
+  border-bottom-color: var(--chrome-clip-border) !important;
+}
+
+/* Search highlighting */
+.chrome-clip-theme-catppuccin-latte .content-text mark {
+  background: var(--chrome-clip-yellow) !important;
+  color: var(--chrome-clip-bg) !important;
+}
+
+/* Focus states */
+.chrome-clip-theme-catppuccin-latte button:focus,
+.chrome-clip-theme-catppuccin-latte input:focus {
+  outline-color: var(--chrome-clip-blue) !important;
+  box-shadow: 0 0 0 2px rgba(30, 102, 245, 0.3) !important;
+}
+
+/* Light theme specific adjustments */
+.chrome-clip-theme-catppuccin-latte .chrome-clip-overlay {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Enhanced contrast for better readability in light theme */
+.chrome-clip-theme-catppuccin-latte .search-clear:hover {
+  background: var(--chrome-clip-bg-soft) !important;
+  color: var(--chrome-clip-fg-bright) !important;
+}
+
+/* Subtle shadows for depth in light theme */
+.chrome-clip-theme-catppuccin-latte .history-item,
+.chrome-clip-theme-catppuccin-latte .tool-btn,
+.chrome-clip-theme-catppuccin-latte .action-btn {
+  box-shadow: 0 1px 3px rgba(76, 79, 105, 0.1) !important;
+}
+
+.chrome-clip-theme-catppuccin-latte .history-item:hover,
+.chrome-clip-theme-catppuccin-latte .tool-btn:hover,
+.chrome-clip-theme-catppuccin-latte .action-btn:hover {
+  box-shadow: 0 2px 6px rgba(76, 79, 105, 0.15) !important;
+}
